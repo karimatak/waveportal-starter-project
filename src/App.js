@@ -8,7 +8,7 @@ export default function App() {
   return (
     <div className="mainContainer">
       <div className="dataContainer">
-        <div className="header">👋 Hey there!</div>
+        <div className="header">👋 Hey everyone!</div>
 
         <div className="bio">
           I am Karim ATAK and I am exploring the web3 world that's pretty cool
