@@ -1,14 +1,18 @@
 .mainContainer {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin-top: 64px;
+  margin: 0 auto;
+  height: 100vh;
+  width: 60%;
+  padding-top: 64px;
+  background-color: #808080;
+  box-sizing: border-box;
 }
 
 .dataContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   max-width: 600px;
 }
 
@@ -18,10 +22,18 @@
   font-weight: 600;
 }
 
+.inputText {
+  height: 3em;
+  padding: 1em;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: floralwhite;
+}
+
 .bio {
   text-align: center;
-  color: gray;
-  margin-top: 16px;
+  color: black;
+  margin: 16px 0;
 }
 
 .waveButton {
@@ -30,5 +42,97 @@
   padding: 8px;
   border: 0;
   border-radius: 5px;
-  
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  padding: 3em;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.title {
+  margin-right: 1.5em;
+}
+
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #808080;
+  color: #808080;
+  box-shadow: 9999px 0 0 -5px #808080;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #808080;
+  color: #808080;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px #808080;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px #808080;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #808080;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #808080;
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px #808080;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #808080;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #808080;
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #808080;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #808080;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #808080;
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #808080;
+  }
 }
